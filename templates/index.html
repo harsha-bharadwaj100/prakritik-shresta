@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Change Detection System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Prakritik Shresta</h1>
+    </header>
+    <main>
+        <section id="map-section">
+            <h2>Interactive Map</h2>
+            <div id="map-placeholder">Map will load here<br>Leaflet.js/Kepler.gl/Google Maps can be integrated here
+            </div>
+            <input type="range" id="time-slider" min="2018" max="2025" value="2025" step="1">
+            <label for="time-slider" id="time-label">Year: 2025</label>
+        </section>
+        <section id="predictions-section">
+            <h2>Predicted Changes</h2>
+            <div id="predictions-placeholder">Predicted changes for year <span id="current-pred"></span> will be
+                displayed here.</div>
+        </section>
+        <section id="xai-section">
+            <h2>Explainable AI Insights</h2>
+            <div id="xai-placeholder">Explainable AI insights for predictions in year <span id="current-xai"></span>
+                will be shown here.</div>
+        </section>
+    </main>
+    <footer>
+        <p>Satellite Change Detection System</p>
+    </footer>
+</body>
+
+</html>
