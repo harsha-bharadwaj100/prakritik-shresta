@@ -4,37 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satellite Change Detection System</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="/static/scripts.js" defer></script>
+    <title>Satellite Change Detection Prototype</title>
+    <!-- Leaflet.js CSS for the interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
     <header>
-        <h1>Prakritik Shresta</h1>
+        <h1>Satellite Change Detection: Guwahati</h1>
     </header>
     <main>
         <section id="map-section">
-            <h2>Interactive Map</h2>
-            <div id="map-placeholder">Map will load here<br>Leaflet.js/Kepler.gl/Google Maps can be integrated here
+            <h2>Interactive Map (<span id="current-year-map">2023</span>)</h2>
+            <!-- This div will hold the map -->
+            <div id="map"></div>
+            <label for="time-slider" id="time-label">Year: 2023</label>
+            <input type="range" id="time-slider" min="2020" max="2023" value="2023" step="1">
+        </section>
+
+        <section id="analysis-section">
+            <h2>Analysis & Predictions</h2>
+            <div id="data-panel">
+                <h3>Key Metrics</h3>
+                <ul id="metrics-list">
+                    <!-- JS will populate this -->
+                </ul>
+                <h3>Prediction</h3>
+                <p id="prediction-text"></p>
             </div>
-            <input type="range" id="time-slider" min="2018" max="2025" value="2025" step="1">
-            <label for="time-slider" id="time-label">Year: 2025</label>
         </section>
-        <section id="predictions-section">
-            <h2>Predicted Changes</h2>
-            <div id="predictions-placeholder">Predicted changes for year <span id="current-pred"></span> will be
-                displayed here.</div>
-        </section>
+
         <section id="xai-section">
             <h2>Explainable AI Insights</h2>
-            <div id="xai-placeholder">Explainable AI insights for predictions in year <span id="current-xai"></span>
-                will be shown here.</div>
+            <div id="xai-panel">
+                <h3>Primary Driver of Change</h3>
+                <p id="xai-top-contributor"></p>
+                <h3>Contributing Factors</h3>
+                <ul id="xai-factors-list">
+                    <!-- JS will populate this -->
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
-        <p>Satellite Change Detection System</p>
+        <p>Prototype for Hackathon by Team</p>
     </footer>
+
+    <!-- Leaflet.js script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Our custom script -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 
 </html>
