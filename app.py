@@ -56,7 +56,7 @@ SIMULATED_DATA = {
         },
         "hotspot_coords": [26.1000, 91.6900],  # Southwest area
     },
-    2023: {
+    2025: {
         "metrics": {
             "urban_growth": "2.8%",
             "deforestation_rate": "1.7%",
